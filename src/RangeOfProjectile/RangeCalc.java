@@ -2,19 +2,23 @@ package RangeOfProjectile;
 
 public class RangeCalc {
 
-    
-    
+    private static double G = 9.81;
+    private double range;
+
     RangeCalc(double speed, double angleInDegrees) {
-        double g, angleInRads, range;
-        g = 9.81;
-        angleInRads = angleInDegrees * Math.PI / 180;
+        double angleInRads;
+        angleInRads = Math.toRadians(angleInDegrees);
         range = 2 * speed * speed * 
-            Math.sin(angleInRads) * Math.cos(angleInRads) / g;
-        System.out.println("Range = " + range + " meters");
+            Math.sin(angleInRads) * Math.cos(angleInRads) / G;
+    }
+
+    public double range() {
+        return this.range;
     }
 
     public static void main(String[] args) {
-        new RangeCalc(20, 45);
+        RangeCalc rc = new RangeCalc(20, 90);
+        System.out.println("Range = " + rc.range() + " meters");
     }
 
 }
