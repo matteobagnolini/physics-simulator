@@ -29,16 +29,4 @@ public class RangeCalc {
         this.angleInRads = Math.toRadians(angle);
     }
 
-    public static void main(String[] args) {
-        RangeCalc rc = new RangeCalc();
-        rc.setSpeed(15);
-        for(double angle = 0; angle<= 90; angle += 5) {
-            rc.setAngle(angle);
-            System.out.println("Using angle = " + angle);
-            System.out.println("Range = " + rc.range() + " meters");
-            System.out.println("Max height: " + rc.height() + " meters");
-            System.out.println("##########################");
-        }
-    }
-
 }
