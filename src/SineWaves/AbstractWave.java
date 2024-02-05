@@ -8,7 +8,7 @@ public abstract class AbstractWave implements Wave {
     private final Map<Double, Double> map = new HashMap<>();
 
     public void initMap(double start, double end) {
-        for(double rad = start; rad <= Math.PI * 4; rad += Math.PI/500000) {
+        for(double rad = start; rad <= Math.PI * 4; rad += Math.PI/50000) {
             this.map.put(rad, waveFunction(rad));
         }
     }
