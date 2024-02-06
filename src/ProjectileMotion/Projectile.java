@@ -12,6 +12,7 @@ public class Projectile {
     private double t = 0;
     private final double drag = 0.1;                          //modify to make the drag stronger or weaker
     private final Map<Double, Double> motion = new TreeMap<>();
+    private final Map<Double, Double> velocity = new TreeMap<>();
 
     Projectile(final double ay, final double vy, final double y) {
         this.y = y;
@@ -25,14 +26,17 @@ public class Projectile {
             vy += ay * dt;
             y += vy * dt;
             t += dt;
-            System.out.println("y: " + y);
-            System.out.println("ay: " + ay);
             motion.put(t, y);
+            velocity.put(t,vy);
         }
     }
 
     public Map<Double, Double> getMotion() {
         return this.motion;
+    }
+
+    public Map<Double, Double> getVelocity() {
+        return this.velocity;
     }
 
 }
