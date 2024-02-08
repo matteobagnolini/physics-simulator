@@ -15,8 +15,8 @@ public class Projectile2D extends Projectile {
     @Override
     public void computeMotion() {
         while(y >= 0) {
-            ay = -g;
-            ax = 0;
+            ay = -g - drag * Math.abs(vy) * vy;
+            ax = -drag * Math.abs(vx) * vx;
             vy += ay * dt;
             vx += ax * dt;
             y += vy * dt;
