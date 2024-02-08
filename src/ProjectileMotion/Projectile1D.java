@@ -1,18 +1,15 @@
 package ProjectileMotion;
 
-import java.util.Map;
-import java.util.TreeMap;
-
 public class Projectile1D extends Projectile {
 
     private double vy;
     private double y;
     private double ay;
 
-    Projectile1D(final double ay, final double vy, final double y) {
+    Projectile1D(final double vy, final double y) {
         this.y = y;
         this.vy = vy;
-        this.ay = ay;
+        this.ay = -g;
     }
 
     /* it implements the Euler-Richardson algorithm that compute ymid, vymid and aymid
