@@ -5,7 +5,7 @@ public class Projectile2D extends Projectile {
     private double vy, vx;
     private double y, x;
 
-    Projectile2D(final double angle, final double v, final double y, final double x) {
+    public Projectile2D(final double angle, final double v, final double y, final double x) {
         this.vy = v * Math.sin(Math.toRadians(angle));
         this.vx = v * Math.cos(Math.toRadians(angle));
         this.y = y;
